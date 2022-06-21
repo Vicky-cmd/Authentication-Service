@@ -1,0 +1,28 @@
+server:
+  port: 8555
+spring:
+  cloud:
+    config:
+      profile: dev
+  config:
+    import: optional:configserver:http://clouduser:configserver!@localhost:8888
+  application:
+    name: authentication-service
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  data:
+    mongodb:
+      uri: mongodb+srv://users/Users?retryWrites=true&w=majority
+    redis:
+      repositories:
+        enabled: true
+  redis:
+    host: redis-15407.com
+    port: 15407
+    password: agageagaeg
+    expiry:
+      time: 86400
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eurekauser:eureka!@localhost:8761/eureka

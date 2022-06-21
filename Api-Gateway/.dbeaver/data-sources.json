@@ -1,0 +1,32 @@
+{
+	"folders": {},
+	"connections": {
+		"mysql8-17ded618f49-1b0e2b0890c7e052": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "AWS RDS",
+			"save-password": false,
+			"read-only": false,
+			"configuration": {
+				"host": "infotrends.cj4hwk9qhvhf.ap-south-1.rds.amazonaws.com",
+				"port": "3306",
+				"url": "jdbc:mysql://infotrends.cj4hwk9qhvhf.ap-south-1.rds.amazonaws.com:3306/",
+				"home": "mysql_client",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}

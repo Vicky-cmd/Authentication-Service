@@ -1,0 +1,32 @@
+debug: true
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
+server:
+  port: '8765'
+spring:
+  cloud:
+    config:
+      profile: dev
+    gateway:
+      discovery.locator.enabled: true
+  config:
+    import: optional:configserver:http://clouduser:configserver!@localhost:8888
+  application:
+    name: api-gateway
+  gateway:
+    excludedURLsNew: /api/v1/users/authenticate,/login
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eurekauser:eureka!@localhost:8761/eureka
+  instance:
+    prefer-ip-address: 'true'
